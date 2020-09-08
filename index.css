@@ -1,27 +1,30 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid black;
-  height: 200px;
-  width: 200px;
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   perspective: 8px;
-  perspective-origin: 50%;
+  perspective-origin: 0%;
+  display: flex;
 }
 
-.element {
-  height: 100px;
-  width: 100px;
-  background: red;
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   transform: translateZ(0px);
-  animation: animateZ 2s infinite;
 }
 
-@keyframes animateZ {
-  from {
-    transform: translateZ(0px);
-  }
-  to {
-    transform: translateZ(4px);
-  }
+.foreground {
+  margin-top: auto;
+  margin-bottom: 50px;
+  transform-origin: 0;
+  transform: translateZ(3px) scale(0.625);
+}
+
+.foreground h1 {
+  font-size: 36px;
 }
