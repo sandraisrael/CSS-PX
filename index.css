@@ -1,0 +1,38 @@
+.parallax-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  perspective: 8px;
+  perspective-origin: 0%;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
+  perspective: 8px;
+  perspective-origin: 50%;
+}
+
+.element {
+  height: 100px;
+  width: 100px;
+  background: red;
+  transform: translateZ(0px);
+  animation: animateZ 2s infinite;
+}
+
+@keyframes animateZ {
+  from {
+    transform: translateZ(0px);
+  }
+  to {
+    transform: translateZ(4px);
+  }
+}
